@@ -26,22 +26,20 @@ set(POLYBENCH_BENCHMARKS
     ludcmp
     trisolv
     deriche
-    floyd-warshall
+    floyd_warshall
     nussinov
     adi
-    fdtd-2d
-    heat-3d
-    jacobi-1d
-    jacobi-2d
-    seidel-2d
+    fdtd_2d
+    heat_3d
+    jacobi_1d
+    jacobi_2d
+    seidel_2d
 )
 
 if(POLYBENCH_BUILD_EXAMPLES)
     include(cmake/AddPolyBenchBase.cmake)
     foreach(NAME IN LISTS POLYBENCH_BENCHMARKS)
-        add_polybench_base(${NAME}_base
-            NAME ${NAME}
-        )
+        add_polybench_base(${NAME}_base NAME ${NAME})
         target_compile_definitions(${NAME}_base PUBLIC POLYBENCH_TIME)
     endforeach()
 
