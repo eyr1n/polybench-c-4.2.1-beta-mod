@@ -13,8 +13,8 @@ set(POLYBENCH_BENCHMARKS
     syr2k
     syrk
     trmm
-    2mm
-    3mm
+    two_mm
+    three_mm
     atax
     bicg
     doitgen
