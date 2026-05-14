@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 3.22)
-project(PolyBench-C LANGUAGES C)
+project(PolyBench LANGUAGES C)
+
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
+if(NOT PROJECT_IS_TOP_LEVEL)
+  set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" PARENT_SCOPE)
+endif()
 
 option(POLYBENCH_BUILD_EXAMPLES "" OFF)
 

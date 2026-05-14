@@ -1,3 +1,5 @@
+include_guard(GLOBAL)
+
 find_library(MATH_LIB m)
 
 set(POLYBENCH_PATH "${CMAKE_CURRENT_LIST_DIR}/..")

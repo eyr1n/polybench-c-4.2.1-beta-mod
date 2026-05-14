@@ -1,3 +1,5 @@
+include_guard(GLOBAL)
+
 set(POLYBENCH_PATH "${CMAKE_CURRENT_LIST_DIR}/..")
 
 function(add_polybench_executable TARGET)
