@@ -1,6 +1,6 @@
 find_library(MATH_LIB m)
 
-set(POLYBENCH_LIB_PATH "${CMAKE_CURRENT_LIST_DIR}/../lib")
+set(POLYBENCH_PATH "${CMAKE_CURRENT_LIST_DIR}/..")
 
 function(add_polybench_library TARGET)
     cmake_parse_arguments(PARSE_ARGV 1 ARG "" "KERNEL" "OPTIONS")
@@ -37,10 +37,10 @@ function(add_polybench_library TARGET)
     set(seidel_2d_SOURCE stencils/seidel-2d.c)
 
     add_library(${TARGET} STATIC
-        "${POLYBENCH_LIB_PATH}/src/polybench.c"
-        "${POLYBENCH_LIB_PATH}/src/${${ARG_KERNEL}_SOURCE}"
+        "${POLYBENCH_PATH}/src/polybench.c"
+        "${POLYBENCH_PATH}/src/${${ARG_KERNEL}_SOURCE}"
     )
-    target_include_directories(${TARGET} PUBLIC "${POLYBENCH_LIB_PATH}/include")
+    target_include_directories(${TARGET} PUBLIC "${POLYBENCH_PATH}/include")
     if(MATH_LIB)
         target_link_libraries(${TARGET} PUBLIC ${MATH_LIB})
     endif()
