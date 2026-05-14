@@ -3,7 +3,7 @@ find_library(MATH_LIB m)
 set(POLYBENCH_LIB_PATH "${CMAKE_CURRENT_LIST_DIR}/../lib")
 
 function(add_polybench_library TARGET)
-    cmake_parse_arguments(PARSE_ARGV 1 ARG "" "NAME" "OPTIONS")
+    cmake_parse_arguments(PARSE_ARGV 1 ARG "" "KERNEL" "OPTIONS")
 
     set(correlation_SOURCE datamining/correlation.c)
     set(covariance_SOURCE datamining/covariance.c)
@@ -38,7 +38,7 @@ function(add_polybench_library TARGET)
 
     add_library(${TARGET} STATIC
         "${POLYBENCH_LIB_PATH}/src/polybench.c"
-        "${POLYBENCH_LIB_PATH}/src/${${ARG_NAME}_SOURCE}"
+        "${POLYBENCH_LIB_PATH}/src/${${ARG_KERNEL}_SOURCE}"
     )
     target_include_directories(${TARGET} PUBLIC "${POLYBENCH_LIB_PATH}/include")
     if(MATH_LIB)
