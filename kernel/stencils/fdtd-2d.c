@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "stencils/fdtd-2d.h"
+#include "polybench.h"
 
 void kernel_fdtd_2d(int tmax, int nx, int ny,
                     DATA_TYPE POLYBENCH_2D(ex, NX, NY, nx, ny),

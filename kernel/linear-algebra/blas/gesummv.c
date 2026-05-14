@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/blas/gesummv.h"
+#include "polybench.h"
 
 void kernel_gesummv(int n, DATA_TYPE alpha, DATA_TYPE beta,
                     DATA_TYPE POLYBENCH_2D(A, N, N, n, n),

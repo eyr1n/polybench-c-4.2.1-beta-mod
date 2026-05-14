@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "stencils/fdtd-2d.h"
+#include "polybench.h"
 #include <stdio.h>
 
 void init_array_fdtd_2d(int tmax, int nx, int ny,

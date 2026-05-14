@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/kernels/3mm.h"
+#include "polybench.h"
 #include <string.h>
 
 int main(int argc, char **argv) {
@@ -20,16 +20,17 @@ int main(int argc, char **argv) {
   POLYBENCH_2D_ARRAY_DECL(G, DATA_TYPE, NI, NL, ni, nl);
 
   /* Initialize array(s). */
-  init_array_3mm(ni, nj, nk, nl, nm, POLYBENCH_ARRAY(A), POLYBENCH_ARRAY(B),
-                 POLYBENCH_ARRAY(C), POLYBENCH_ARRAY(D));
+  init_array_three_mm(ni, nj, nk, nl, nm, POLYBENCH_ARRAY(A),
+                      POLYBENCH_ARRAY(B), POLYBENCH_ARRAY(C),
+                      POLYBENCH_ARRAY(D));
 
   /* Start timer. */
   polybench_start_instruments;
 
   /* Run kernel. */
-  kernel_3mm(ni, nj, nk, nl, nm, POLYBENCH_ARRAY(E), POLYBENCH_ARRAY(A),
-             POLYBENCH_ARRAY(B), POLYBENCH_ARRAY(F), POLYBENCH_ARRAY(C),
-             POLYBENCH_ARRAY(D), POLYBENCH_ARRAY(G));
+  kernel_three_mm(ni, nj, nk, nl, nm, POLYBENCH_ARRAY(E), POLYBENCH_ARRAY(A),
+                  POLYBENCH_ARRAY(B), POLYBENCH_ARRAY(F), POLYBENCH_ARRAY(C),
+                  POLYBENCH_ARRAY(D), POLYBENCH_ARRAY(G));
 
   /* Stop and print timer. */
   polybench_stop_instruments;
@@ -37,7 +38,7 @@ int main(int argc, char **argv) {
 
   /* Prevent dead-code elimination. All live-out data must be printed
      by the function call in argument. */
-  polybench_prevent_dce(print_array_3mm(ni, nl, POLYBENCH_ARRAY(G)));
+  polybench_prevent_dce(print_array_three_mm(ni, nl, POLYBENCH_ARRAY(G)));
 
   /* Be clean. */
   POLYBENCH_FREE_ARRAY(E);

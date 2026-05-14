@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/solvers/lu.h"
+#include "polybench.h"
 
 void kernel_lu(int n, DATA_TYPE POLYBENCH_2D(A, N, N, n, n)) {
   int i, j, k;

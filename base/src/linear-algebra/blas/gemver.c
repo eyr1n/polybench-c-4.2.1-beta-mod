@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/blas/gemver.h"
+#include "polybench.h"
 #include <stdio.h>
 
 void init_array_gemver(

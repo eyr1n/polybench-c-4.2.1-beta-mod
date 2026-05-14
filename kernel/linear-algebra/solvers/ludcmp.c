@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/solvers/ludcmp.h"
+#include "polybench.h"
 
 void kernel_ludcmp(int n, DATA_TYPE POLYBENCH_2D(A, N, N, n, n),
                    DATA_TYPE POLYBENCH_1D(b, N, n),

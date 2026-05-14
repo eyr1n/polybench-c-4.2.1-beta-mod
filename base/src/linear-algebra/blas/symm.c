@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/blas/symm.h"
+#include "polybench.h"
 #include <stdio.h>
 
 void init_array_symm(int m, int n, DATA_TYPE *alpha, DATA_TYPE *beta,

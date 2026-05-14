@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/solvers/cholesky.h"
+#include "polybench.h"
 #include <string.h>
 
 int main(int argc, char **argv) {

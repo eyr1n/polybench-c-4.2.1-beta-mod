@@ -98,19 +98,20 @@
 #define POW_FUN(x, y) pow(x, y)
 #endif
 
-void init_array_3mm(int ni, int nj, int nk, int nl, int nm,
-                    DATA_TYPE POLYBENCH_2D(A, NI, NK, ni, nk),
-                    DATA_TYPE POLYBENCH_2D(B, NK, NJ, nk, nj),
-                    DATA_TYPE POLYBENCH_2D(C, NJ, NM, nj, nm),
-                    DATA_TYPE POLYBENCH_2D(D, NM, NL, nm, nl));
-void print_array_3mm(int ni, int nl, DATA_TYPE POLYBENCH_2D(G, NI, NL, ni, nl));
-void kernel_3mm(int ni, int nj, int nk, int nl, int nm,
-                DATA_TYPE POLYBENCH_2D(E, NI, NJ, ni, nj),
-                DATA_TYPE POLYBENCH_2D(A, NI, NK, ni, nk),
-                DATA_TYPE POLYBENCH_2D(B, NK, NJ, nk, nj),
-                DATA_TYPE POLYBENCH_2D(F, NJ, NL, nj, nl),
-                DATA_TYPE POLYBENCH_2D(C, NJ, NM, nj, nm),
-                DATA_TYPE POLYBENCH_2D(D, NM, NL, nm, nl),
-                DATA_TYPE POLYBENCH_2D(G, NI, NL, ni, nl));
+void init_array_three_mm(int ni, int nj, int nk, int nl, int nm,
+                         DATA_TYPE POLYBENCH_2D(A, NI, NK, ni, nk),
+                         DATA_TYPE POLYBENCH_2D(B, NK, NJ, nk, nj),
+                         DATA_TYPE POLYBENCH_2D(C, NJ, NM, nj, nm),
+                         DATA_TYPE POLYBENCH_2D(D, NM, NL, nm, nl));
+void print_array_three_mm(int ni, int nl,
+                          DATA_TYPE POLYBENCH_2D(G, NI, NL, ni, nl));
+void kernel_three_mm(int ni, int nj, int nk, int nl, int nm,
+                     DATA_TYPE POLYBENCH_2D(E, NI, NJ, ni, nj),
+                     DATA_TYPE POLYBENCH_2D(A, NI, NK, ni, nk),
+                     DATA_TYPE POLYBENCH_2D(B, NK, NJ, nk, nj),
+                     DATA_TYPE POLYBENCH_2D(F, NJ, NL, nj, nl),
+                     DATA_TYPE POLYBENCH_2D(C, NJ, NM, nj, nm),
+                     DATA_TYPE POLYBENCH_2D(D, NM, NL, nm, nl),
+                     DATA_TYPE POLYBENCH_2D(G, NI, NL, ni, nl));
 
 #endif /* !_3MM_H */

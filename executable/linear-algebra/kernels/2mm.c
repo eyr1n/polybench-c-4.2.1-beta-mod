@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/kernels/2mm.h"
+#include "polybench.h"
 #include <string.h>
 
 int main(int argc, char **argv) {
@@ -19,16 +19,16 @@ int main(int argc, char **argv) {
   POLYBENCH_2D_ARRAY_DECL(D, DATA_TYPE, NI, NL, ni, nl);
 
   /* Initialize array(s). */
-  init_array_2mm(ni, nj, nk, nl, &alpha, &beta, POLYBENCH_ARRAY(A),
-                 POLYBENCH_ARRAY(B), POLYBENCH_ARRAY(C), POLYBENCH_ARRAY(D));
+  init_array_two_mm(ni, nj, nk, nl, &alpha, &beta, POLYBENCH_ARRAY(A),
+                    POLYBENCH_ARRAY(B), POLYBENCH_ARRAY(C), POLYBENCH_ARRAY(D));
 
   /* Start timer. */
   polybench_start_instruments;
 
   /* Run kernel. */
-  kernel_2mm(ni, nj, nk, nl, alpha, beta, POLYBENCH_ARRAY(tmp),
-             POLYBENCH_ARRAY(A), POLYBENCH_ARRAY(B), POLYBENCH_ARRAY(C),
-             POLYBENCH_ARRAY(D));
+  kernel_two_mm(ni, nj, nk, nl, alpha, beta, POLYBENCH_ARRAY(tmp),
+                POLYBENCH_ARRAY(A), POLYBENCH_ARRAY(B), POLYBENCH_ARRAY(C),
+                POLYBENCH_ARRAY(D));
 
   /* Stop and print timer. */
   polybench_stop_instruments;
@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
 
   /* Prevent dead-code elimination. All live-out data must be printed
      by the function call in argument. */
-  polybench_prevent_dce(print_array_2mm(ni, nl, POLYBENCH_ARRAY(D)));
+  polybench_prevent_dce(print_array_two_mm(ni, nl, POLYBENCH_ARRAY(D)));
 
   /* Be clean. */
   POLYBENCH_FREE_ARRAY(tmp);

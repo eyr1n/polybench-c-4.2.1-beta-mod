@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "medley/floyd-warshall.h"
+#include "polybench.h"
 
 void kernel_floyd_warshall(int n, DATA_TYPE POLYBENCH_2D(path, N, N, n, n)) {
   int i, j, k;

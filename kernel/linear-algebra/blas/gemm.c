@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/blas/gemm.h"
+#include "polybench.h"
 
 void kernel_gemm(int ni, int nj, int nk, DATA_TYPE alpha, DATA_TYPE beta,
                  DATA_TYPE POLYBENCH_2D(C, NI, NJ, ni, nj),

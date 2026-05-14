@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/kernels/atax.h"
+#include "polybench.h"
 
 void kernel_atax(int m, int n, DATA_TYPE POLYBENCH_2D(A, M, N, m, n),
                  DATA_TYPE POLYBENCH_1D(x, N, n),

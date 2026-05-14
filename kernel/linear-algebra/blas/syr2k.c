@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/blas/syr2k.h"
+#include "polybench.h"
 
 void kernel_syr2k(int n, int m, DATA_TYPE alpha, DATA_TYPE beta,
                   DATA_TYPE POLYBENCH_2D(C, N, N, n, n),

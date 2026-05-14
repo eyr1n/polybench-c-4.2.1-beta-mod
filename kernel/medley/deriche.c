@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "medley/deriche.h"
+#include "polybench.h"
 #include <math.h>
 
 void kernel_deriche(int w, int h, DATA_TYPE alpha,

@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/kernels/doitgen.h"
+#include "polybench.h"
 
 void kernel_doitgen(int nr, int nq, int np,
                     DATA_TYPE POLYBENCH_3D(A, NR, NQ, NP, nr, nq, np),

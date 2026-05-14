@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "datamining/correlation.h"
+#include "polybench.h"
 #include <math.h>
 
 void kernel_correlation(int m, int n, DATA_TYPE float_n,

@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "stencils/adi.h"
+#include "polybench.h"
 
 void kernel_adi(int tsteps, int n, DATA_TYPE POLYBENCH_2D(u, N, N, n, n),
                 DATA_TYPE POLYBENCH_2D(v, N, N, n, n),

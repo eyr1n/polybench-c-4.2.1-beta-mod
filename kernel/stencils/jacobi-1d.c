@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "stencils/jacobi-1d.h"
+#include "polybench.h"
 
 void kernel_jacobi_1d(int tsteps, int n, DATA_TYPE POLYBENCH_1D(A, N, n),
                       DATA_TYPE POLYBENCH_1D(B, N, n)) {

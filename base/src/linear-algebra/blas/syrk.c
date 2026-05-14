@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/blas/syrk.h"
+#include "polybench.h"
 #include <stdio.h>
 
 void init_array_syrk(int n, int m, DATA_TYPE *alpha, DATA_TYPE *beta,

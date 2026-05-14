@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/solvers/cholesky.h"
+#include "polybench.h"
 #include <math.h>
 
 void kernel_cholesky(int n, DATA_TYPE POLYBENCH_2D(A, N, N, n, n)) {

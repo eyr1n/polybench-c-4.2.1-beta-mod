@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/kernels/mvt.h"
+#include "polybench.h"
 
 void kernel_mvt(int n, DATA_TYPE POLYBENCH_1D(x1, N, n),
                 DATA_TYPE POLYBENCH_1D(x2, N, n),

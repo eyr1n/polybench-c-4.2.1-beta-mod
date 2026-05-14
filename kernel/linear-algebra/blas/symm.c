@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/blas/symm.h"
+#include "polybench.h"
 
 void kernel_symm(int m, int n, DATA_TYPE alpha, DATA_TYPE beta,
                  DATA_TYPE POLYBENCH_2D(C, M, N, m, n),

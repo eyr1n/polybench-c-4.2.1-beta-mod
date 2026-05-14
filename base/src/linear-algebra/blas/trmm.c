@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/blas/trmm.h"
+#include "polybench.h"
 #include <stdio.h>
 
 void init_array_trmm(int m, int n, DATA_TYPE *alpha,

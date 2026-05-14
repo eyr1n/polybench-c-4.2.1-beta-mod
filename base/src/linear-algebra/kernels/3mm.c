@@ -1,12 +1,12 @@
-#include "polybench.h"
 #include "linear-algebra/kernels/3mm.h"
+#include "polybench.h"
 #include <stdio.h>
 
-void init_array_3mm(int ni, int nj, int nk, int nl, int nm,
-                    DATA_TYPE POLYBENCH_2D(A, NI, NK, ni, nk),
-                    DATA_TYPE POLYBENCH_2D(B, NK, NJ, nk, nj),
-                    DATA_TYPE POLYBENCH_2D(C, NJ, NM, nj, nm),
-                    DATA_TYPE POLYBENCH_2D(D, NM, NL, nm, nl)) {
+void init_array_three_mm(int ni, int nj, int nk, int nl, int nm,
+                         DATA_TYPE POLYBENCH_2D(A, NI, NK, ni, nk),
+                         DATA_TYPE POLYBENCH_2D(B, NK, NJ, nk, nj),
+                         DATA_TYPE POLYBENCH_2D(C, NJ, NM, nj, nm),
+                         DATA_TYPE POLYBENCH_2D(D, NM, NL, nm, nl)) {
   int i, j;
 
   for (i = 0; i < ni; i++)
@@ -23,8 +23,8 @@ void init_array_3mm(int ni, int nj, int nk, int nl, int nm,
       D[i][j] = (DATA_TYPE)((i * (j + 2) + 2) % nk) / (5 * nk);
 }
 
-void print_array_3mm(int ni, int nl,
-                     DATA_TYPE POLYBENCH_2D(G, NI, NL, ni, nl)) {
+void print_array_three_mm(int ni, int nl,
+                          DATA_TYPE POLYBENCH_2D(G, NI, NL, ni, nl)) {
   int i, j;
 
   POLYBENCH_DUMP_START;

@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "stencils/seidel-2d.h"
+#include "polybench.h"
 
 void kernel_seidel_2d(int tsteps, int n,
                       DATA_TYPE POLYBENCH_2D(A, N, N, n, n)) {

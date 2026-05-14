@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/blas/gemver.h"
+#include "polybench.h"
 
 void kernel_gemver(
     int n, DATA_TYPE alpha, DATA_TYPE beta,

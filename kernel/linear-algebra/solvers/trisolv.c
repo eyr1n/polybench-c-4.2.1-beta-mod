@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/solvers/trisolv.h"
+#include "polybench.h"
 
 void kernel_trisolv(int n, DATA_TYPE POLYBENCH_2D(L, N, N, n, n),
                     DATA_TYPE POLYBENCH_1D(x, N, n),

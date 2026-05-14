@@ -1,5 +1,5 @@
-#include "polybench.h"
 #include "linear-algebra/solvers/gramschmidt.h"
+#include "polybench.h"
 #include <stdio.h>
 
 void init_array_gramschmidt(int m, int n, DATA_TYPE POLYBENCH_2D(A, M, N, m, n),
