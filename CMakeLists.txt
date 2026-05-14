@@ -37,25 +37,17 @@ set(POLYBENCH_BENCHMARKS
 )
 
 if(POLYBENCH_BUILD_EXAMPLES)
-    include(cmake/AddPolyBenchBase.cmake)
+    include(cmake/AddPolyBenchLibrary.cmake)
     foreach(NAME IN LISTS POLYBENCH_BENCHMARKS)
-        add_polybench_base(${NAME}_base NAME ${NAME})
-        target_compile_definitions(${NAME}_base PUBLIC POLYBENCH_TIME)
-    endforeach()
-
-    include(cmake/AddPolyBenchKernel.cmake)
-    foreach(NAME IN LISTS POLYBENCH_BENCHMARKS)
-        add_polybench_kernel(${NAME}_kernel
-            NAME ${NAME}
-            BASE ${NAME}_base
-        )
+        add_polybench_library(${NAME}_lib NAME ${NAME})
+        target_compile_definitions(${NAME}_lib PUBLIC POLYBENCH_TIME)
     endforeach()
 
     include(cmake/AddPolyBenchExecutable.cmake)
     foreach(NAME IN LISTS POLYBENCH_BENCHMARKS)
         add_polybench_executable(${NAME}
             NAME ${NAME}
-            KERNEL ${NAME}_kernel
+            LIBRARY ${NAME}_lib
         )
     endforeach()
 endif()
