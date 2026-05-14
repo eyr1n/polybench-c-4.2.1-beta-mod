@@ -45,9 +45,7 @@ if(POLYBENCH_BUILD_EXAMPLES)
 
     include(cmake/AddPolyBenchExecutable.cmake)
     foreach(NAME IN LISTS POLYBENCH_BENCHMARKS)
-        add_polybench_executable(${NAME}
-            NAME ${NAME}
-            LIBRARY ${NAME}_lib
-        )
+        add_polybench_executable(${NAME} NAME ${NAME})
+        target_link_libraries(${NAME} ${NAME}_lib)
     endforeach()
 endif()

@@ -1,7 +1,7 @@
 set(POLYBENCH_EXEC_PATH "${CMAKE_CURRENT_LIST_DIR}/../exec")
 
 function(add_polybench_executable TARGET)
-    cmake_parse_arguments(PARSE_ARGV 1 ARG "" "NAME;LIBRARY" "")
+    cmake_parse_arguments(PARSE_ARGV 1 ARG "" "NAME" "")
 
     set(correlation_SOURCE datamining/correlation.c)
     set(covariance_SOURCE datamining/covariance.c)
@@ -35,5 +35,4 @@ function(add_polybench_executable TARGET)
     set(seidel_2d_SOURCE stencils/seidel-2d.c)
 
     add_executable(${TARGET} "${POLYBENCH_EXEC_PATH}/${${ARG_NAME}_SOURCE}")
-    target_link_libraries(${TARGET} ${ARG_LIBRARY})
 endfunction()
