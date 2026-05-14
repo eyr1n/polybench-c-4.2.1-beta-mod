@@ -70,4 +70,6 @@ function(add_polybench_library TARGET)
     if(DATA_TYPE_IS_DOUBLE IN_LIST ARG_OPTIONS)
         target_compile_definitions(${TARGET} PUBLIC DATA_TYPE_IS_DOUBLE)
     endif()
+
+    set(${TARGET}_OPTIONS ${ARG_OPTIONS} PARENT_SCOPE)
 endfunction()
