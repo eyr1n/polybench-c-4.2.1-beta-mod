@@ -75,7 +75,7 @@
 #endif
 
 /* RNA bases represented as chars, range is [0,3] */
-typedef char base;
+typedef signed char base;
 
 void init_array_nussinov(int n, base POLYBENCH_1D(seq, N, n),
                          DATA_TYPE POLYBENCH_2D(table, N, N, n, n));
