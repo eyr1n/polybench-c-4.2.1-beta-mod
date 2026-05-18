@@ -6,6 +6,8 @@ if(NOT PROJECT_IS_TOP_LEVEL)
   set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" PARENT_SCOPE)
 endif()
 
+include(PolyBench)
+
 option(POLYBENCH_BUILD_EXAMPLES "" OFF)
 
 set(POLYBENCH_BENCHMARKS
@@ -42,13 +44,11 @@ set(POLYBENCH_BENCHMARKS
 )
 
 if(POLYBENCH_BUILD_EXAMPLES)
-    include(cmake/AddPolyBenchLibrary.cmake)
     foreach(NAME IN LISTS POLYBENCH_BENCHMARKS)
         add_polybench_library(${NAME}_lib KERNEL ${NAME})
         target_compile_definitions(${NAME}_lib PUBLIC POLYBENCH_TIME)
     endforeach()
 
-    include(cmake/AddPolyBenchExecutable.cmake)
     foreach(NAME IN LISTS POLYBENCH_BENCHMARKS)
         add_polybench_executable(${NAME} KERNEL ${NAME})
         target_link_libraries(${NAME} ${NAME}_lib)
